@@ -606,8 +606,8 @@ input[type="checkbox"] {
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
 
-  .header:has(#menu-toggle:checked) {
-    background-color: var(--watchdog-white);
+  .header:has(#menu-toggle:checked) .theme-toggle {
+    /* styles when toggle is checked */
   }
 
 }
