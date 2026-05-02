@@ -610,8 +610,4 @@ input[type="checkbox"] {
     background-color: var(--watchdog-white);
   }
 
-  /* Adjusts the menu visibility when the toggle is active */
-  body:has(#menu-toggle:checked) {
-    transform: translateX(0);
-}
 }
