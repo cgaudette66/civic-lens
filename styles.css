@@ -574,11 +574,11 @@ input[type="checkbox"] {
   }
  
   body:not(.light-mode):not(.dark-mode) article {
-    border-color: #555;
+    border-color: var(--truth-text);
   }
  
   body:not(.light-mode):not(.dark-mode) article h3 {
-    border-color: #555;
+    border-color: var(--truth-text);
   }
 }
  
@@ -606,21 +606,12 @@ input[type="checkbox"] {
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
 
-  .mobile-nav:has(#menu-toggle:not(:checked)) .menu {
-    display: none;
+  .header:has(#menu-toggle:checked) {
+    background-color: var(--watchdog-white);
   }
- 
-  .mobile-nav:has(#menu-toggle:checked) .menu {
-    display: flex;
-    flex-direction: column;
-  }
- 
-  @media (min-width: 620px) {
-    .mobile-nav:has(#menu-toggle:not(:checked)) .menu,
-    .mobile-nav:has(#menu-toggle:checked) .menu {
-      display: flex;
-      flex-direction: row;
-    }
-  }
- 
+
+  /* Adjusts the menu visibility when the toggle is active */
+  body:has(#menu-toggle:checked) {
+    transform: translateX(0);
+}
 }
